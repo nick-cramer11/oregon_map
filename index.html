@@ -4,21 +4,30 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="https://unpkg.com/leaflet@1.7.1/dist/leaflet.js"></script>
-    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css" />
+    <title>Historical Map Viewer</title>
     <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
-    <!--main content-->
-    <div class="container">
-        <div id="map"></div>
-        <div class="slidecontainer">
-            <input type="range" min="0" max="100" value="0" step="1" class="slider" id="year-slider">
+    <!-- Loading Indicator -->
+    <div id="loading-screen">
+        <div class="spinner"></div>
+        <p>Loading maps and data...</p>
+    </div>
+
+    <!-- Main Content -->
+    <div class="container" style="display: none;">
+        <div id="map-container">
+            <canvas id="map-canvas"></canvas>
+        </div>
+        <div class="controls">
+            <input type="range" min="0" max="80" value="0" step="1" class="slider" id="year-slider">
+            <div id="year-display">Year: 1918</div>
+            <button id="reset-zoom">Reset Zoom</button>
         </div>
     </div>
 
-    <!--Javascript files-->
+    <!-- JavaScript File -->
     <script src="script/script.js"></script>
 </body>
 
